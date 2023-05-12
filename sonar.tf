@@ -1,6 +1,6 @@
 resource "aws_instance" "mySonarInstance" {
-      ami           = "ami-0ee23bfc74a881de5"
-      key_name = var.key_name
+      ami           = "ami-007855ac798b5175e"
+      key_name = var.myJenkinsKey
       instance_type = "t2.micro"
       vpc_security_group_ids = [aws_security_group.sonar-sg-2022.id]
       tags= {
@@ -42,7 +42,7 @@ resource "aws_instance" "mySonarInstance" {
 # Create Elastic IP address for Sonar instance
 resource "aws_eip" "mySonarInstance" {
   vpc      = true
-  instance = aws_instance.mySonarInstance.id
+  instance = t2.micro.mySonarInstance.id
 tags= {
     Name = "sonar_elastic_ip"
   }
