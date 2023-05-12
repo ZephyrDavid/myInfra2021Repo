@@ -43,9 +43,9 @@ resource "aws_security_group" "jenkins-sg-2022" {
 }
 
 resource "aws_instance" "myFirstInstance" {
-  ami           = var.ami-007855ac798b5175e
-  key_name = var.myJenkinsKey
-  instance_type = var.t2.small
+  ami           = var.ami_id
+  key_name = var.key_name
+  instance_type = var.instance_small
   vpc_security_group_ids = [aws_security_group.jenkins-sg-2022.id]
   tags= {
     Name = var.tag_name
