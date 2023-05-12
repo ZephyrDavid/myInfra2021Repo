@@ -38,7 +38,7 @@ resource "aws_security_group" "jenkins-sg-2022" {
   }
 
   tags= {
-    Name = var.sg-0e12f567e1eaf87f7
+    Name = var.security_group
   }
 }
 
